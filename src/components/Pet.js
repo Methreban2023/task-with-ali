@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllPets } from "../api/pets";
-
+import PetItem from "./PetItem";
 const Pet = () => {
   const [pets, setPets] = useState([]);
 
@@ -11,7 +11,7 @@ const Pet = () => {
   useEffect(() => {
     callApi();
   }, []);
-  const petList = () => pets.map((pet) => <h1>{pet.name}</h1>);
+  const petList = pets.map((pet) => <PetItem pet={pet} key={pet.id} />);
 
   return <div>{petList}</div>;
 };

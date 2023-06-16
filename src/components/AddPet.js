@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 const AddPet = () => {
   const [petInfo, setPetInfo] = useState({});
-  const handleChange = (e) => {
+  let handleChange = (e) => {
     setPetInfo(...petInfo, ([e.target.name] = e.target.value));
+    console.log(petInfo);
   };
   const handleSubmit = () => {};
   return (

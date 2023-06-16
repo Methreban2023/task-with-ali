@@ -6,7 +6,7 @@ import Pet from "./components/Pet";
 function App() {
   return (
     <div className="App">
-      <Link to="/pets">
+      <Link to="/pet">
         <button>Pets</button>
       </Link>
       <Link to="/addpet">
@@ -14,7 +14,7 @@ function App() {
       </Link>
 
       <Routes>
-        <Route path="/pets" element={<Pet />}></Route>
+        <Route path="/pet" element={<Pet />}></Route>
         <Route path="/addpet" element={<AddPet />}></Route>
       </Routes>
     </div>
