@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Link, Route, Routes } from "react-router-dom";
+import AddPet from "./components/AddPet";
+import Pet from "./components/Pet";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Link to="/pets">
+        <button>Pets</button>
+      </Link>
+      <Link to="/addpet">
+        <button>Add Pets</button>
+      </Link>
+
+      <Routes>
+        <Route path="/pets" element={<Pet />}></Route>
+        <Route path="/addpet" element={<AddPet />}></Route>
+      </Routes>
     </div>
   );
 }
